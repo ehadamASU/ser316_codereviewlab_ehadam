@@ -25,7 +25,8 @@ class MainFrame extends JFrame {
 	JButton 		withdrawButton;
 	JButton			newAccountButton;
 	JButton			displayAccountsButton;
-	JButton			displayODAccountsButton;
+	JButton			displayAllAccountsButton;
+	JButton 		saveButton;
 
 	public MainFrame(String propertyFile) throws IOException {
 
@@ -59,11 +60,11 @@ class MainFrame extends JFrame {
 		balanceField = new JTextField(20);
 
 		newAccountButton = new JButton("New Account");
-		JButton depositButton = new JButton("Deposit");
-		JButton withdrawButton = new JButton("Withdraw");
-		JButton saveButton = new JButton("Save Accounts");
+		depositButton = new JButton("Deposit");
+		withdrawButton = new JButton("Withdraw");
+		saveButton = new JButton("Save Accounts");
 		displayAccountsButton = new JButton("List Accounts");
-		JButton displayAllAccountsButton = new JButton("All Accounts");
+		displayAllAccountsButton = new JButton("All Accounts");
 
 		this.addWindowListener(new FrameHandler());
 		newAccountButton.addActionListener(new NewAccountHandler());
@@ -105,6 +106,10 @@ class MainFrame extends JFrame {
 		pane.add(panel5);
 		
 		setSize(400, 250);
+	}
+	
+	private void _buildPanels() {
+		
 	}
 
 	class DisplayHandler implements ActionListener {
